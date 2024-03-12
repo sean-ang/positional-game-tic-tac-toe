@@ -1,0 +1,114 @@
+\ProvidesPackage{Colourmath}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{tabu}
+\usepackage{pgf,tikz,pgfplots}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usetikzlibrary{arrows}
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{amsthm}
+\usepackage{subfiles}
+\usepackage{enumerate}
+\usepackage{lipsum}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage[ddmmyyyy]{datetime}
+\usepackage[most]{tcolorbox}
+\pgfplotsset{compat=1.11}
+
+\DeclareMathOperator{\Z}{{\mathbb{Z}}}
+\DeclareMathOperator{\Q}{{\mathbb{Q}}}
+\DeclareMathOperator{\R}{{\mathbb{R}}}
+\DeclareMathOperator{\C}{{\mathbb{C}}}
+\DeclareMathOperator{\N}{{\mathbb{N}}}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\renewcommand{\implies}{{\Rightarrow}}
+\renewcommand{\iff}{\Leftrightarrow}
+\newcommand{\eop}{\hfill$\Box$}
+\DeclareMathOperator{\nin}{{\not\in}}
+\DeclareMathOperator{\eps}{\varepsilon}
+\DeclarePairedDelimiter\angleb{\langle}{\rangle}
+
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\newtcolorbox[auto counter,number within=section]{definition}[2][]{%
+	colback		=green!10!white, 
+	colframe	=green!10!white, 
+	coltitle	=green!50!black,
+	fonttitle	=\bfseries\large,
+	title 		=Definition~\thetcbcounter~({#2}),#1
+}
+
+\newtcolorbox[use counter from=definition]{theorem}[2][]{%
+	colback		=blue!10!white, 
+	colframe	=blue!10!white, 
+	coltitle	=blue!60!black,
+	fonttitle	=\bfseries\large,
+	title 		=Theorem~\thetcbcounter~({#2}),#1
+}
+
+\newtcolorbox[use counter from=definition]{proposition}[2][]{%
+	colback		=orange!10!white, 
+	colframe	=orange!10!white, 
+	coltitle	=orange!50!black,
+	fonttitle	=\bfseries\large,
+	title 		=Proposition~\thetcbcounter~({#2}),#1
+}
+
+\newtcolorbox[use counter from=definition]{lemma}[2][]{%
+	colback		=purple!10!white, 
+	colframe	=purple!10!white, 
+	coltitle	=purple!60!black,
+	fonttitle	=\bfseries\large,
+	title 		=Lemma~\thetcbcounter~({#2}),#1
+}
+
+\newtcolorbox[use counter from=definition]{example}[2][]{%
+	colback		=brown!20!white, 
+	colframe	=brown!20!white, 
+	coltitle	=brown!60!black,
+	fonttitle	=\bfseries\large,
+	title 		=Example~\thetcbcounter~({#2}),#1
+}
+
+\newtcolorbox[use counter from=definition]{exercise}{%
+	colback		=red!15!white, 
+	colframe	=red!15!white, 
+	coltitle	=red!60!black,
+	fonttitle	=\bfseries\large,
+	title 		=Exercise~\thetcbcounter
+}
+
+\renewtcolorbox{proof}{%
+	colback		=yellow!15!white, 
+	colframe	=yellow!15!white, 
+	coltitle	=orange!50!black,
+	fonttitle	=\bfseries\large,
+	title 		=Proof,
+	after upper	=\eop
+}
+
+\newtcolorbox{solution}{%
+	colback		=yellow!15!white, 
+	colframe	=yellow!15!white, 
+	coltitle	=orange!50!black,
+	fonttitle	=\bfseries\large,
+	title 		=Solution,
+	after upper	=\eop
+}
