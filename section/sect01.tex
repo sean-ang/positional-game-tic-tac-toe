@@ -1,0 +1,70 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Lecture 1: Introduction}
+We will set up the terminologies that will be used in future lectures.
+
+\begin{definition}[label=board_lines]{Board \& Winning Lines}
+We define the \boldblue{board} $X$ to be a finite set unless stated otherwise. \\
+Let $\mathcal{F} \subseteq \mathcal{P}(X)$ be the family of \boldblue{winning lines} or \boldblue{winning sets}.
+\end{definition}
+
+This family can be represented as a hypergraph on $X$, where elements of $X$ are the vertices of the hypergraph while elements of $\mathcal{F}$ are the edges of the hypergraph. 
+
+Often, all \(A \in \mathcal{F}\) have the same size \(n\), i.e. $|A| = n$ for all \(A \in \mathcal{F}\). In this case, $\mathcal{F}$ is a n-graph (a graph where all edges contain \(n\) vertices).
+
+For this course, we will cover two types of games:
+\begin{definition}[label=game_types]{Types of Games}
+    \underline{\textbf{Strong Games}} \\
+    Two players takes turns to play until a player occupies all elements of some \(A \in \mathcal{F}\). If \(X\) is filled with no winning line occupied by either player, then the game is considered as a draw.
+    
+    \underline{\textbf{Maker-breaker Games}}\\
+    Two players take turn to play. Player 1 wins if they occupy all elements of some \(A \in \mathcal{F}\) while player 2 wins if player 1 is unable to do so.
+\end{definition}
+
+Note that by definition, maker-breaker games cannot end in a draw. We say that a game is a P1 win if player 1 has a winning strategy and likewise for player 2.
+
+\begin{example}[label=ex_game]{Games}
+\begin{enumerate}
+    \item Normal tic-tac-toe (insert drawing, Sri)
+    This game is well-known to be a draw. 
+    \item 3D tic-tac-toe 
+    \begin{itemize}
+        \item on a $3\times3\times3$ board (insert drawing, Sri)\\
+        This game is known to be a P1 win.
+        \item on a $4\times4\times4$ board (insert drawing, Sri)\\
+        This version is still known to be a P1 win but the explicit winning strategy is very complicated.
+    \end{itemize}
+\end{enumerate}
+\end{example}
+
+Let's take a look at the generalisation of Tic-tac-toe in higher dimensions, that is the Hales-Jewett game of the $[n]^d-$game.
+
+\begin{definition}[label = nd-game]{Hales-Jewett / $[n]^d-$game}
+    Let the board $X = [n]^d = \{1, 2, \hdots, n\}^d = \{(a_1, a_2, \hdots, a_d) ~|~ a_1, a_2, \hdots, a_d \in [n]\}$. \\
+    The winning lines are the two type of lines defined as follows:
+    \begin{itemize}
+        \item A combinatorial line is a set of \(n\) points of the form:
+        \[\left\{(x_1, x_2, \hdots, x_d) ~\middle|~ 
+        \begin{aligned}
+      &x_i = x_j, ~\forall i, ~j \in I\\
+      &x_i = a_i, ~\forall i \notin I\\
+    \end{aligned}\right\}\]
+    where $I \subseteq [d]$, $I \neq \phi$ and $a_i \in [n]$ for each $i \notin I$.
+    \item A line is a set of the form:
+    \[\left\{(x_1, x_2, \hdots, x_d) ~\middle|~ 
+        \begin{aligned}
+      &x_i = x_j, ~\forall i, ~j \in I\\
+      &x_i = x_j, ~\forall i, ~j \in J\\
+      &x_i = a_i, ~\forall i \notin I \cup J
+    \end{aligned}\right\}\]
+    where $I, ~J \subseteq [d]$, $I \cup J \neq \phi$, $I \cap J = \phi$ and $a_i \in [n]$ for each $i \notin I \cup J$.
+    \end{itemize}
+\end{definition}
+
+Here, we refer $I$ as the active coordinates.
+
+\begin{example}{Lines}
+    
+\end{example}
+\end{document}
